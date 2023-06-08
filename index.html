@@ -20,6 +20,7 @@
 <body>
    <!-- !BARRA DE NAVEGACION -->
    <nav>
+      <!-- imagen menu hamburguesa -->
       <img src="./icons/icon_menu.svg" alt="menu" class="menu">
 
       <div class="navbar-left">
@@ -49,7 +50,8 @@
 
       <div class="navbar-right">
          <ul>
-            <li class="navbar-email">platzi@example.com</li>  <!--Elemento navbar-email que se selecciona para que aparezca el menu desplegable-->
+            <li class="navbar-email">platzi@example.com</li>
+            <!--Elemento navbar-email que se selecciona para que aparezca el menu desplegable-->
             <li class="navbar-shopping-cart">
                <img src="./icons/icon_shopping_cart.svg" alt="shopping cart">
                <div>2</div>
@@ -58,22 +60,67 @@
       </div>
       <div class="desktop-menu inactive">
          <ul>
+            <li>
+               <a href="/" class="title">My orders</a>
+            </li>
+
+            <li>
+               <a href="/">My account</a>
+            </li>
+
+            <li>
+               <a href="/">Sign out</a>
+            </li>
+         </ul>
+      </div>
+      <!-- !MENU MOBILE -->
+      <div class="mobile-menu">
+         <ul>
            <li>
-             <a href="/" class="title">My orders</a>
+             <a href="/">CATEGORIES</a>
            </li>
+           <li>
+             <a href="/">All</a>
+           </li>
+           <li>
+             <a href="/">Clothes</a>
+           </li>
+           <li>
+             <a href="/">Electronics</a>
+           </li>
+           <li>
+             <a href="/">Furnitures</a>
+           </li>
+           <li>
+             <a href="/">Toys</a>
+           </li>
+           <li>
+             <a href="/">Other</a>
+           </li>
+         </ul>
      
+         <ul>
+           <li>
+             <a href="/">My orders</a>
+           </li>
            <li>
              <a href="/">My account</a>
            </li>
+         </ul>
      
+         <ul>
            <li>
-             <a href="/">Sign out</a>
+             <a href="/" class="email">platzi@example.com</a>
+           </li>
+           <li>
+             <a href="/" class="sign-out">Sign out</a>
            </li>
          </ul>
+       </div>
    </nav>
 
-    </div>
-    <script src="./main.js"></script>
+
+   <script src="./main.js"></script>
 </body>
 
 </html>
