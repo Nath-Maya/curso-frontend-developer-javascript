@@ -14,3 +14,13 @@ function toggleDesktopMenu() {
    desktopMenu.classList.toggle('inactive'); 
 };
 
+//! MENU DESPLEGABLE HAMBURGUESA
+
+const burguerMenu = document.querySelector('.menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+burguerMenu.addEventListener('click', toggleMenuMobile);
+
+function toggleMenuMobile() {
+   mobileMenu.classList.toggle('inactive'); 
+};
