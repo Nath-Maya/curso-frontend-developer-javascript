@@ -56,4 +56,3 @@ function toggleCartDetail() {
    detailCart.classList.toggle('inactive');
 };
 
-
