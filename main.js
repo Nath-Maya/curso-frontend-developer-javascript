@@ -5,12 +5,15 @@ const menuEmail = document.querySelector('.navbar-email'); //Seleccionar element
 
 const desktopMenu = document.querySelector('.desktop-menu'); //Elemento que se agregara al momento de realizar el click.
 
-
 menuEmail.addEventListener('click', toggleDesktopMenu); //Cuando se realice click muestre el menu desplegable del email.
 
 
 function toggleDesktopMenu() {
    //Esta funcion agrega o quita la clase inactive en el elemento desktopMenu, cuando se realice el evento. 
+   if (!isDetailCartclosed) {
+      detailCart.classList.add('inactive');
+   }
+
    desktopMenu.classList.toggle('inactive'); 
 };
 
@@ -22,20 +25,35 @@ const mobileMenu = document.querySelector('.mobile-menu');
 burguerMenu.addEventListener('click', toggleMenuMobile);
 
 function toggleMenuMobile() {
+
+   const isDetailCartclosed = detailCart.classList.contains('inactive');
+
+   if (!isDetailCartclosed) {
+      detailCart.classList.add('inactive');
+   }
    mobileMenu.classList.toggle('inactive'); 
+
 };
 
 //! MENU CARRITO DE COMPRAS
 
-const menuCarritoIcon = document.querySelector('.navbar-shopping-cart'); //Selecciono el icono del carrito de compras
-const detalleCarrito = document.querySelector('.product-detail'); //Selecciono el elemento a mostrar, que es el contenedor de los elementos en el carrito de compras. 
+const menuCartIcon = document.querySelector('.navbar-shopping-cart'); //Selecciono el icono del carrito de compras
 
-menuCarritoIcon.addEventListener('click', toggleCarritoDetalles);
+const detailCart = document.querySelector('.product-detail'); //Selecciono el elemento a mostrar, que es el contenedor de los elementos en el carrito de compras. 
 
-function toggleCarritoDetalles() {
+menuCartIcon.addEventListener('click', toggleCartDetail);
+
+function toggleCartDetail() {
    //Mostrar el detalle de los elementos contenidos en el carrito.
-   console.log('Mostrando/ocultando detalle carrito de compras');
-   detalleCarrito.classList.toggle('inactive');
+
+   const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
+ 
+   //Confirmo que el mobile menu no este activo.
+   if (!isMobileMenuClosed) {
+      mobileMenu.classList.add('inactive');
+   
+   }
+   detailCart.classList.toggle('inactive');
 };
 
 
