@@ -28,13 +28,14 @@ function toggleMenuMobile() {
 //! MENU CARRITO DE COMPRAS
 
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart'); //Selecciono el icono del carrito de compras
-const detalleCarrito = document.querySelector('product-detail'); //Selecciono el elemento a mostrar, que es el contenedor de los elementos en el carrito de compras. 
+const detalleCarrito = document.querySelector('.product-detail'); //Selecciono el elemento a mostrar, que es el contenedor de los elementos en el carrito de compras. 
 
 menuCarritoIcon.addEventListener('click', toggleCarritoDetalles);
 
 function toggleCarritoDetalles() {
+   //Mostrar el detalle de los elementos contenidos en el carrito.
    console.log('Mostrando/ocultando detalle carrito de compras');
-   mobileMenu.classList.toggle('inactive');
+   detalleCarrito.classList.toggle('inactive');
 };
 
 
