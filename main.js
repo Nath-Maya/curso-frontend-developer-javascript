@@ -24,3 +24,17 @@ burguerMenu.addEventListener('click', toggleMenuMobile);
 function toggleMenuMobile() {
    mobileMenu.classList.toggle('inactive'); 
 };
+
+//! MENU CARRITO DE COMPRAS
+
+const menuCarritoIcon = document.querySelector('.navbar-shopping-cart'); //Selecciono el icono del carrito de compras
+const detalleCarrito = document.querySelector('product-detail'); //Selecciono el elemento a mostrar, que es el contenedor de los elementos en el carrito de compras. 
+
+menuCarritoIcon.addEventListener('click', toggleCarritoDetalles);
+
+function toggleCarritoDetalles() {
+   console.log('Mostrando/ocultando detalle carrito de compras');
+   mobileMenu.classList.toggle('inactive');
+};
+
+
