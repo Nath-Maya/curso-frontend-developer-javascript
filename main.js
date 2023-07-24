@@ -39,7 +39,7 @@ function toggleMenuMobile() {
 
 const menuCartIcon = document.querySelector('.navbar-shopping-cart'); //Selecciono el icono del carrito de compras
 
-const detailCart = document.querySelector('.product-detail'); //Selecciono el elemento a mostrar, que es el contenedor de los elementos en el carrito de compras. 
+const detailCart = document.querySelector('.cart-detail'); //Selecciono el elemento a mostrar, que es el contenedor de los elementos en el carrito de compras. 
 
 menuCartIcon.addEventListener('click', toggleCartDetail);
 
@@ -98,6 +98,7 @@ function renderProducts(arr) {
         <figure>
           <img src="./icons/bt_add_to_cart.svg" alt="">
         </figure>
+        <button class="view-detail" >Ver detalles </button>
       </div>
       `
       document.querySelector(".cards-container").appendChild(productCard);
@@ -108,5 +109,14 @@ function renderProducts(arr) {
 
 renderProducts(productsList);
 
+//!FUNCION PARA MOSTRAR DETALLE DE UN PRODUCTO INDIVIDUAL
 
+//Selecciono el boton de mostrar detalles que tiene la clase view-detail.
+const botonViewDetail = document.querySelector('.view-detail');
+const viewDetailProduct = document.querySelector('.product-detail');
 
+botonViewDetail.addEventListener('click', openViewDetailProduct);
+
+function openViewDetailProduct() {
+   viewDetailProduct.classList.remove('inactive');
+}
