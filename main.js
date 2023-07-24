@@ -56,3 +56,57 @@ function toggleCartDetail() {
    detailCart.classList.toggle('inactive');
 };
 
+//! LISTA DE PRODUCTOS
+
+const productsList = [];
+
+productsList.push({
+   name: "Bicicleta Gt Avalanche Comp 2022",
+   price: 3259599,
+   img: "https://assets.specialized.com/i/specialized/91522-55_ROCKHOPPER-COMP-29-REDWD-SMK_HERO?bg=rgb(241,241,241)&w=1600&h=900&fmt=auto",
+});
+
+productsList.push({
+   name: "Bicicleta GT Avalanche Elite 29 2022",
+   price: 2570800,
+   img: "https://bicistore.com.co/wp-content/uploads/2021/01/imagen-6-1.jpg",
+});
+
+productsList.push({
+   name: "Bicicleta GT Force Elite",
+   price: 16780400,
+   img: "https://bicistore.com.co/wp-content/uploads/2021/11/20220520_145823.jpg",
+});
+
+//! CREAR ELEMENTO HTML CON CADA PRODUCTO
+//Se recorre el array de productList.
+
+function renderProducts(arr) {
+
+   for (product of arr) {
+      //crear una constante para la creacion de elemento div.
+      const productCard =  document.createElement("div");
+      productCard.classList.add("product-card"); //agrego la clase
+      //Estructura en html con los valores que se necesitan. 
+      productCard.innerHTML = `
+      <img src=${product.img} alt=${product.name}>
+      <div class="product-info">
+        <div>
+          <p>$${product.price}</p>
+          <p>${product.name}</p>
+        </div>
+        <figure>
+          <img src="./icons/bt_add_to_cart.svg" alt="">
+        </figure>
+      </div>
+      `
+      document.querySelector(".cards-container").appendChild(productCard);
+      //Selecciono el elemento al que le agregare el elemento hijo: productCard.
+   };
+
+};
+
+renderProducts(productsList);
+
+
+
