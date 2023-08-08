@@ -42,21 +42,18 @@ function toggleCartDetail() {
   //Mostrar el detalle de los elementos contenidos en el carrito.
 
   const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
-
   //Confirmo que el mobile menu no este activo.
   if (!isMobileMenuClosed) {
     mobileMenu.classList.add("inactive");
   }
-
   const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
 
   if(!isProductDetailClosed) {
    productDetailContainer.classList.add('inactive');
-
+}
+detailCart.classList.toggle("inactive");
 }
 
-  detailCart.classList.toggle("inactive");
-}
 
 //! LISTA DE PRODUCTOS
 
@@ -128,7 +125,6 @@ const viewDetailProduct = document.querySelector(".product-detail");
 //Itero sobre cada elemento y le agrego el evento
 viewDetail.forEach( productCard => {
    productCard.addEventListener('click',openViewDetailProduct)
-
 })
 
  function openViewDetailProduct() {
